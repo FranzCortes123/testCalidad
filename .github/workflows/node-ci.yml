@@ -16,5 +16,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "18"
+      - run: echo "Este push fue hecho por ${{ github.actor }}"
+      - run: echo "Autor del commit ${{ github.event.head_commit.author.name }}"
       - run: npm ci
       - run: npx jest
